@@ -75,6 +75,15 @@ The project uses an e-commerce dataset containing customer, product, order, paym
 SELECT * FROM ecommerce_dataset;
 ```
 
+### Display Selected Columns
+
+```sql
+SELECT first_name,
+       country,
+       product_name
+FROM ecommerce_dataset;
+```
+
 ### Filter customers by country
 
 ```sql
@@ -99,6 +108,24 @@ category,
 SUM(quantity * unit_price) AS Revenue
 FROM ecommerce_dataset
 GROUP BY category;
+```
+
+### Aggregate function (Sum, Max, Min, Avg)
+
+```sql
+SELECT category,
+       SUM(quantity*unit_price) AS Revenue
+FROM ecommerce_dataset
+GROUP BY category;
+
+SELECT MAX(unit_price)
+FROM ecommerce_dataset;
+
+SELECT MIN(unit_price)
+FROM ecommerce_dataset;
+
+SELECT AVG(rating)
+FROM ecommerce_dataset;
 ```
 
 ### Customers with above-average ratings
